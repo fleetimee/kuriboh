@@ -1,0 +1,28 @@
+extends templateadmin
+
+block menu
+  h1 Menu
+
+block content
+  h2 Daftar Pengguna
+  .table-responsive
+  table.table.table-striped.table-sm
+    thead
+    tr
+      th(scope="col") #
+      th(scope="col") Email
+      th(scope="col") Sandi
+      th(scope="col") Kota ID
+      th(scope="col") Aksi
+    tbody
+    each baris in daftar
+      tr
+        td= baris.pengguna_id
+        td= baris.pengguna_email
+        td= baris.pengguna_sandi
+        td= baris.kota_id
+        td
+          a(href="penggunahapus/" + baris.pengguna_id) Hapus
+          |
+          | |
+          a(href="penggunaform/" + baris.pengguna_id) Edit

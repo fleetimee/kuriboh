@@ -1,0 +1,37 @@
+extends templateadmin
+
+block menu
+  h1 Menu
+
+block content
+  h2 Section title
+  form(method="POST", action="")
+
+  .mb-3
+    label.form-label Email
+    input.form-control(
+      type="email",
+      placeholder="Enter email",
+      name="pengguna_email",
+      value=pengguna.pengguna_email
+    )
+  .mb-3
+    label.form-label Sandi
+    input.form-control(
+      type="password",
+      placeholder="Password",
+      name="pengguna_sandi",
+      value=pengguna.pengguna_sandi
+    )
+  .mb-3
+    label.form-label Kota
+    br
+    select.form-select(name="kota_id")
+    option(value=pengguna.kota_id)
+  .form-group
+    input.form-control(
+      type="hidden",
+      name="pengguna_id",
+      value=pengguna.pengguna_id
+    )
+    button.btn.btn-primary(type="submit") Submit
